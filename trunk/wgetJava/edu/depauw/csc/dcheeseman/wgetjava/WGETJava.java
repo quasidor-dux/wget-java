@@ -7,7 +7,17 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.rmi.server.UID;
 
+/**
+ * @author David Cheeseman
+ *	DePauw '08
+ *	Last revised 080505.
+ */
 public class WGETJava {
+	
+	/**
+	 * Command line component.
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		if (args.length != 1) {
 			outputUsage();
@@ -24,12 +34,28 @@ public class WGETJava {
 		}
 	}
 
+	/**
+	 * Outputs the usage of the command line component.
+	 */
 	private static void outputUsage() {
 		System.out.println("USAGE: ");
 		System.out
 				.println("java -jar PHPDownloader.jar %URL OF PHP DOWNLOAD WITH QUOTES%");
 	}
 
+	/**
+	 * This function downloads the file specified in the URL to the
+	 * current working directory.
+	 * @param theURL
+	 * The URL of the file to be downloaded.
+	 * @return
+	 * An integer result based on the WGETJavaResults Enumeration.
+	 * Values Include:
+	 * 	FAILED_IO_EXCEPTION - Could not open a connection to the URL.
+	 * 	FAILED_UKNOWNTYPE - Could not determine the file type.
+	 * 	COMPLETE - Downloaded completed sucessfully.
+	 * @throws IOException
+	 */
 	public static WGETJavaResults DownloadFile(URL theURL) throws IOException {
 		URLConnection con;
 		UID uid = new UID();
