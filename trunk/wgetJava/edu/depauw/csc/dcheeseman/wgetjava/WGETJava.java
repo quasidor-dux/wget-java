@@ -40,7 +40,7 @@ public class WGETJava {
 	private static void outputUsage() {
 		System.out.println("USAGE: ");
 		System.out
-				.println("java -jar PHPDownloader.jar %URL OF PHP DOWNLOAD WITH QUOTES%");
+				.println("java -jar wgetjava.jar %URL OF PHP DOWNLOAD WITH QUOTES%");
 	}
 
 	/**
@@ -70,7 +70,7 @@ public class WGETJava {
 			byte[] buffer = new byte[4 * 1024];
 			int read;
 
-			String[] split = type.split("\"");
+			String[] split = type.split("/");
 			String theFile = Integer.toHexString(uid.hashCode()) + "_"
 					+ split[split.length - 1];
 
