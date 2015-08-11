@@ -1,0 +1,1 @@
+This is a simple set of static functions which can be used to download content from the internet given a hyperlink.  It is designed to be exported as a jar and used from the command line.
